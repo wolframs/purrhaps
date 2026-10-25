@@ -1,0 +1,8 @@
+val messages: List<Message> = [Message("system", "Be a helpful cat."), Message("user", "Hello!")]
+val request: Prompt = Prompt(messages)
+print(request.messages[1].content)
+// This is constructed example data, not a claimed live model call.
+val response: ModelResponse = ModelResponse("Meow!", "stop", TokenUsage(12, 3))
+print(response.text, response.finishReason, response.usage.outputTokens)
+fun textOf(reply: ModelResponse): String { return reply.text }
+print(textOf(response))

@@ -1,0 +1,14 @@
+// Two kinds of opinion; one shared uncertainty policy.
+maybe mood: String = "cheerful"
+definitely different: Bool = mood ?!= "sunny"
+val comparison = different!!
+print("Meaningfully different:", comparison)
+print("Reported confidence:", comparison.confidence)
+print("Options:", comparison.decision.options)
+
+val request: DecisionInput = DecisionInput("Which animal?", ["cat", "dog"], "cat")
+definitely animal: String = request
+val chosen = animal!!
+print("Selected:", chosen)
+print("Evidence:", chosen.decision)
+// chosen.because would raise ExplainabilityError. Decisions do not grow rationales.

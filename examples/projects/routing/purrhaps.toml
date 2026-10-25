@@ -1,0 +1,34 @@
+manifest_version = 1
+
+[project]
+name = "routing-demo"
+entry = "main.prr"
+
+[runtime]
+max_calls = 20
+timeout = 30
+
+[providers.offline]
+transport = "demo"
+
+[models.chat]
+provider = "offline"
+kind = "generative"
+
+[models.precise]
+provider = "offline"
+kind = "generative"
+temperature = 0
+
+[models.classifier]
+provider = "offline"
+kind = "decision"
+
+[routes]
+writing = "chat"
+careful = "precise"
+triage = "classifier"
+
+[defaults]
+generative = "writing"
+decision = "triage"

@@ -1,0 +1,4 @@
+maybe me = this
+print(me)
+print("Confidence:", me.confidence)
+val identity = me!! // Intentionally fails. Even cats have limits.

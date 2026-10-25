@@ -1,0 +1,15 @@
+val tags: List<String> = [" cat ", "box", "cat"]
+print(tags[0].trim().uppercase())
+print(tags.distinct().sorted().joinToString(" / "))
+val counts: Map<String, Int> = mapOf("cats" to 3, "boxes" to 2)
+print(counts.keys, counts["cats"], counts["missing"])
+print([1, 2, 3].sum(), (-7).abs(), 12.coerceIn(0, 10))
+val optional: Int? = "no cat count".toIntOrNull()
+print(optional, "42".toIntOrNull())
+with temperature(0) {
+    maybe count: Int = "the answer to everything"
+    val lazyCounts: List<Int> = listOf(count, count + 1)
+    val snapshot = lazyCounts!!
+    print(snapshot, snapshot.confidence)
+    print(snapshot[0].because)
+}

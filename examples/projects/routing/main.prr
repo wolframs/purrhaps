@@ -1,0 +1,12 @@
+// Routes describe a job. The manifest selects its model and provider.
+maybe answer: Int = "the answer to everything"
+with model("careful") {
+    val snapshot = answer!!
+    print("Careful answer:", snapshot, snapshot.confidence)
+    with model("triage") {
+        definitely different: Bool = "cat" ?!= "kitty"
+        print("Different:", different!!)
+    }
+    print("Generation route is still careful:", answer!!)
+}
+print("Ordinary deterministic code:", [1,2,3].sum())

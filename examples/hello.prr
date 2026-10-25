@@ -1,0 +1,23 @@
+// Welcome to Purrhaps. The offline demo oracle is not a language model.
+print(hi())
+maybe n: Int = "roughly the answer to everything"
+print("Two independent reads:", n, n)
+val definite = n!!
+print("Collapsed:", definite, "because:", definite.because)
+print("A fresh explanation:", n.because)
+
+with temperature(0.0) {
+    print("Demo oracle at zero temperature:", n!!, n!!)
+}
+
+fun greet(user: Human) {
+    maybe mood = user.lastMessage
+    if (mood ~= "sunny") print("☀️")
+}
+greet(Human("cheerful"))
+
+perhaps answer: Int = "the meaning of life"
+print("One answer in this scope:", answer, answer, answer)
+val contagious = n + 1
+print("Still uncertain:", contagious, contagious)
+print("Last reader:", n.owner)

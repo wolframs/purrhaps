@@ -1,0 +1,13 @@
+perhaps cat: String = "Schrödinger"
+print("Before a read:", cat.owner)
+print(cat, cat)
+print("Owner:", cat.owner)
+fun visit() {
+    print(cat, cat) // one new sample for each function invocation
+    print("Owner inside:", cat.owner)
+}
+visit()
+print("Owner afterwards:", cat.owner)
+visit()
+print("Back home:", cat)
+print("Owner:", cat.owner)

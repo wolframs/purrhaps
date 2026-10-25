@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+.coverage
+.env
+.env.*
+!.env.example
+# Local experiment receipts contain private workspace and conversation references.
+/docs/tribunal-notes-2026-10-25.md

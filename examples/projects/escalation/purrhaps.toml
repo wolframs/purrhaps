@@ -1,0 +1,34 @@
+manifest_version = 1
+
+[project]
+name = "cats-only-escalation"
+entry = "main.prr"
+no_humans_allowed = true
+
+[runtime]
+max_calls = 4
+timeout = 30
+
+[providers.offline]
+transport = "demo"
+
+[models.writer]
+provider = "offline"
+kind = "generative"
+
+[models.judge]
+provider = "offline"
+kind = "decision"
+
+[routes]
+writing = "writer"
+bench = "judge"
+
+[defaults]
+generative = "writing"
+decision = "bench"
+
+[escalation]
+threshold = 0.95
+exposure = "blind"
+on_low_confidence = "random"

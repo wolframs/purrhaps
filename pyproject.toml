@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "purrhaps-lang"
+version = "0.1.0"
+description = "An oracle-powered language with feline uncertainty semantics"
+requires-python = ">=3.11"
+license = "MIT"
+
+[project.scripts]
+purrhaps = "purrhaps.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["purrhaps*"]
+
+[tool.setuptools.package-data]
+purrhaps = ["rust/*.rs"]

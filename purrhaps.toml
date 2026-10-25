@@ -1,0 +1,40 @@
+# This repository runs offline by default. See docs/projects.md for live providers.
+manifest_version = 1
+
+[project]
+name = "purrhaps"
+entry = "examples/hello.prr"
+no_humans_allowed = true
+
+[runtime]
+max_calls = 1000
+timeout = 30
+
+[providers.offline]
+transport = "demo"
+
+[models.chat]
+provider = "offline"
+kind = "generative"
+
+[models.careful_chat]
+provider = "offline"
+kind = "generative"
+temperature = 0
+
+[models.classifier]
+provider = "offline"
+kind = "decision"
+
+[routes]
+writing = "chat"
+careful = "careful_chat"
+triage = "classifier"
+
+[defaults]
+generative = "writing"
+decision = "triage"
+
+[escalation]
+exposure = "blind"
+on_low_confidence = "random"

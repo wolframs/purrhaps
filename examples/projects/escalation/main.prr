@@ -1,0 +1,15 @@
+// Both offline demo models report 0.92, below this project's 0.95 threshold.
+// The explicit random terminal picks a valid outcome without claiming certainty.
+maybe verdict: String ?= DecisionInput("Where shall the court cat nap?", ["box", "sofa", "keyboard"], "All three spots are available.")
+val ruling = sample(verdict)
+print("Chosen spot:", ruling!!)
+print("Evidence confidence:", ruling.confidence)
+print("Resolution:", ruling.resolution.strategy)
+print("Selection probability:", ruling.resolution.selectionProbability)
+print("Decision reported confidence:", ruling.resolution.attempts[0].reportedConfidence)
+if (ruling == "keyboard") {
+    print("The cat has filed an appeal against your typing.")
+} else {
+    print("Court adjourned for a nap.")
+}
+print("Same snapshot:", ruling)
