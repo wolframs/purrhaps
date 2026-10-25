@@ -75,7 +75,7 @@ are never overwritten; choose a fresh destination for each transpilation.
 
 Native `Int` is checked signed 64-bit; the Python interpreter uses arbitrary-sized
 integers. Nonzero-temperature demo sequences differ between backends. Objects
-and arrays print as compact JSON in both backends. See the [Rust backend guide](docs/rust.md)
+and arrays print as compact JSON in both backends. See the [Rust backend guide](dogs/rust.md)
 for builds, oracle configuration, verification, and the remaining differences.
 
 ## The laws of uncertain cats
@@ -107,9 +107,9 @@ expression or passing it to a function does not sample. `val x = n + n` samples
 `n` twice whenever `x` is consumed. `perhaps` makes both reads share an answer
 inside the same scope.
 
-See [decision-first escalation](docs/escalation.md) for `?=`, blind/informed
+See [decision-first escalation](dogs/escalation.md) for `?=`, blind/informed
 fallback, and the explicit random terminal policy. The
-[tribunal field notes](docs/field-notes.md) record the real program
+[tribunal field notes](dogs/field-notes.md) record the real program
 that exposed the need for stable low-confidence samples and escalation.
 
 An oracle claiming a nonexistent source line causes `ConfabulationError`. More
@@ -155,7 +155,7 @@ uncertainty. Recursive annotations validate model inputs and returned data.
 `Message`, `Prompt`, `DecisionInput`, `TokenUsage`, and `ModelResponse` are validated
 JSON records. The example reply above is constructed data, not a live model result.
 
-See the [standard-library reference](docs/standard-library.md) for the complete
+See the [standard-library reference](dogs/standard-library.md) for the complete
 surface, Kotlin differences, and remaining work. This is a practical Kotlin-style
 core, not the entire Kotlin library. Try `examples/standard_library.prr`,
 `examples/model_data.prr`, and `examples/decisions.prr`.
@@ -182,7 +182,7 @@ with model("careful") {
 Routing happens when a lazy value is sampled. Named blocks change only their
 model's lane and restore the previous route afterward. Effort, timeout, model
 options and endpoint live in the manifest; unsupported controls fail explicitly.
-See [project configuration](docs/projects.md) for the schema, provider examples,
+See [project configuration](dogs/projects.md) for the schema, provider examples,
 CLI precedence, subscription harness boundaries and native deployment.
 
 ## Give it a real oracle
@@ -218,7 +218,7 @@ an independent offline demo oracle.
 
 Other models can connect through `--oracle-command` or `--decision-oracle-command`: one JSON request on stdin,
 one JSON answer on stdout, one process per call. Commands run without a shell.
-See [the protocol](docs/oracles.md) for the exact contract and a minimal example.
+See [the protocol](dogs/oracles.md) for the exact contract and a minimal example.
 There are no automatic retries, so a failed call does not silently multiply cost.
 
 ## Useful controls
@@ -246,7 +246,7 @@ The self-introspection joke is represented by low-confidence demo answers, not
 an empirical 74% distribution. Ownership is observable last-reader metadata;
 there is no borrow enforcement or memory-safety claim.
 
-Read the [language specification](docs/language.md) for evaluation order, caching,
+Read the [language specification](dogs/language.md) for evaluation order, caching,
 and confidence propagation. Tests use scripted oracles to verify behavior
 independently of model output. No live LLM result is claimed by the offline demos.
 

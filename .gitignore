@@ -9,4 +9,4 @@ dist/
 .env.*
 !.env.example
 # Local experiment receipts contain private workspace and conversation references.
-/docs/tribunal-notes-2026-10-25.md
+/dogs/tribunal-notes-2026-10-25.md

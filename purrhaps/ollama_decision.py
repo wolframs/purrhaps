@@ -1,6 +1,6 @@
 """Local Ollama System One adapter for Purrhaps's finite-choice decision route.
 
-Uses /v1/systemone, never chat generation. See docs/oracles.md for the mapping.
+Uses /v1/systemone, never chat generation. See dogs/oracles.md for the mapping.
 No model installation or credential discovery is performed.
 """
 import argparse

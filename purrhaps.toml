@@ -1,4 +1,4 @@
-# This repository runs offline by default. See docs/projects.md for live providers.
+# This repository runs offline by default. See dogs/projects.md for live providers.
 manifest_version = 1
 
 [project]
